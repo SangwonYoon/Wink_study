@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>동동이</title>
     <style>
         header{
-            background-color: aliceblue;
             padding: 20px 0;
         }
         #menubtn{
@@ -15,10 +14,6 @@
             font-size: 16px;
             border:none;
             margin-left: 20px;
-        }
-
-        #menu-background{
-            background-color: rgb(230, 240, 243);
         }
 
         #menu{
@@ -31,14 +26,14 @@
             display:none;
             position: absolute;
             background-color: #ddd;
-            min-width: 205px;
+            min-width: 190px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
 
         #menu-content a {
             color:black;
-            padding: 22px 16px;
+            padding: 23px 16px;
             text-decoration: none;
             display: inline-block;
         }
@@ -56,8 +51,7 @@
         }
 
         #info{
-            background-color: aliceblue;
-            padding: 20px 400px;
+            padding: 20px 350px;
         }
 
         #info img {
@@ -74,7 +68,6 @@
         }
 
         #photo-background{
-            background-color: rgb(230, 240, 243);
             padding-top: 50px;
         }
 
@@ -184,7 +177,14 @@
             height: 720px;
             width: 560px;
         }
-        
+
+        #video{
+            margin:50px 570px;
+        }
+
+        body{
+            background-color: aliceblue;
+        }
     </style>
 </head>
 <body>
@@ -209,10 +209,10 @@
             <p>나이: 7살</p>
             <p>몸무게: 9kg</p>
             <p>견종: 스피츠</p>
-            <p>성별: </p>
+            <p>성별: 남자</p>
             <p>좋아하는 음식: 수제간식</p>
             <p>싫어하는 음식: 사료</p>
-            <p>취미: </p>
+            <p>취미: 냄새맡기</p>
         </div>
     </section>
     <section id="photo-background">
@@ -238,8 +238,8 @@
             </div>
         </div>
     </section>
-    <section id = "video">
-
+    <section id = "video-background">
+        <video id="video" src="dongdong.mp4" controls autoplay></video>
     </section>
 </body>
 </html>
