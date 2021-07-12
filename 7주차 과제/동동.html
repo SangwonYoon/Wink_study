@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        header{
+            background-color: aliceblue;
+            padding: 20px 0;
+        }
+        #menubtn{
+            background: url(8.jpg);
+            color: white;
+            padding: 33px;
+            font-size: 16px;
+            border:none;
+            margin-left: 20px;
+        }
+
+        #menu-background{
+            background-color: rgb(230, 240, 243);
+        }
+
+        #menu{
+            position: relative;
+            display: inline-block;
+            padding:20px 10px;
+        }
+
+        #menu-content{
+            display:none;
+            position: absolute;
+            background-color: #ddd;
+            min-width: 205px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        #menu-content a {
+            color:black;
+            padding: 22px 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        #menu-content a:hover{
+            background-color: gray;
+        }
+
+        #menu:hover #menu-content{
+            display: inline-block;
+        }
+
+        #menu:hover #menubtn {
+            background: url(7.jpg);
+        }
+
+        #info{
+            background-color: aliceblue;
+            padding: 20px 400px;
+        }
+
+        #info img {
+            height: 720px;
+            width: 405px;
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: top;
+        }
+
+        #info div{
+            display: inline-block;
+            font-size: 22px; 
+        }
+
+        #photo1{
+            height: 720px;
+            width: 560px;
+        }
+
+        #photo2{
+            height: 720px;
+            width: 405px;
+        }
+
+        #photo3{
+            height: 720px;
+            width: 405px;
+        }
+
+        #photo4{
+            height: 720px;
+            width: 560px;
+        }
+
+        #photo5{
+            height: 720px;
+            width: 560px;
+        }
+
+        #video{
+            margin:50px 570px;
+        }
+
+        body{
+            background-color: aliceblue;
+        }
+
+        ul{
+            list-style:none;
+        }
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            height: 720px;
+            width: 560px;
+            position: relative;
+            overflow: hidden;
+        }
+        .slider{
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-bottom: 0px;
+            margin-top: 0px;
+            padding-left: 0px;
+        }
+                
+    </style>
+</head>
+<body>
+    <header>        
+        <h1 style = "text-align: center;">동동이를 소개합니다</h1>
+    </header>
+    <nav id = "menu-background">
+        <div id = "menu">
+            <button id="menubtn">
+            </button>
+            <div id = "menu-content">
+                <a href="#info">정보</a>
+                <a href="#photo">사진</a>
+                <a href="#video">영상</a>
+            </div>
+        </div>
+    </nav>
+    <section id = "info">
+        <img src="6.jpg">
+        <div id = "information">
+            <p>이름: 동동</p>
+            <p>나이: 7살</p>
+            <p>몸무게: 9kg</p>
+            <p>견종: 스피츠</p>
+            <p>성별: 남자</p>
+            <p>좋아하는 음식: 수제간식</p>
+            <p>싫어하는 음식: 사료</p>
+            <p>취미: 냄새맡기</p>
+        </div>
+    </section>
+    <section class="wrapper">
+        <div class="container">
+            <ul class="slider">
+                <li><img src="1.jpg" class = item id = "photo1"></li>
+                <li><img src="4.jpg" class = item id = "photo4"></li>
+                <li><img src="5.jpg" class = item id = "photo5"></li>
+            </ul>
+        </div>
+    </section>
+    <section id = "video-background">
+        <video id="video" src="dongdong.mp4" controls autoplay loop muted></video>
+    </section>
+    <script>
+        var slideWrapper = document.querySelector('.container');
+        var slides = document.querySelectorAll('.item');
+        var totalSlides = slides.length; // item의 갯수
+        
+        
+        var sliderWidth = slideWrapper.clientWidth; // container의 width
+        var slideIndex = 0;
+        var slider = document.querySelector('.slider');
+        
+        slider.style.width = sliderWidth * totalSlides + 'px';
+        
+        showSlides()
+        
+        function showSlides() {
+            for(var i=0;i<slides.length;i++){
+                slider.style.left = -(sliderWidth * slideIndex) + 'px';    
+            }
+            slideIndex++;
+            if (slideIndex === totalSlides) {
+                slideIndex = 0;
+            }
+            setTimeout(showSlides, 2000); 
+        }
+    </script>
+</body>
+</html>
